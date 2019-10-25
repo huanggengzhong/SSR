@@ -23,22 +23,17 @@ export default {
   ** Global CSS
   */
   css: [
-    '~assets/style/index.css',
-    'element-ui/lib/theme-chalk/index.css'
+    "~/assets/style/index.css"
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/ElementUI', ssr: true }
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    // 2019年10月25日10:21:37我把eslint给关闭了
-    // '@nuxtjs/eslint-module',
   ],
   /*
   ** Nuxt.js modules
@@ -49,10 +44,10 @@ export default {
   ** Build configuration
   */
   build: {
-    vendor: ['element-ui','axios'],
     /*
     ** You can extend webpack config here
     */
+   vender:['axios'],
     extend (config, ctx) {
     }
   }

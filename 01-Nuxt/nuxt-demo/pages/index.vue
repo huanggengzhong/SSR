@@ -14,6 +14,7 @@
   </div>
 </template>
 <script>
+import axios from '~/plugins/axios.js';
 export default {
   components: {},
   data() {
@@ -65,35 +66,44 @@ export default {
   // },
 
   //promise异步数据
-  asyncData(context,callback){
-    return new Promise((resolve,reject)=>{
-      setTimeout(() => {
-        resolve({
-        movieList: [
-          {
-            title: '中国功夫1',
-            id: 1
-          },
-          {
-            title: '大圣归来1',
-            id: 2
-          },
-          {
-            title: '肖申克的救赎1',
-            id: 3
-          }
-        ]
-      })
-      }, 1000);
-    }).then(res=>{
-      // console.log(res);
-      callback(null,{
-        movieList:res.movieList
-      })
+  // asyncData(context,callback){
+  //   return new Promise((resolve,reject)=>{
+  //     setTimeout(() => {
+  //       resolve({
+  //       movieList: [
+  //         {
+  //           title: '中国功夫1',
+  //           id: 1
+  //         },
+  //         {
+  //           title: '大圣归来1',
+  //           id: 2
+  //         },
+  //         {
+  //           title: '肖申克的救赎1',
+  //           id: 3
+  //         }
+  //       ]
+  //     })
+  //     }, 1000);
+  //   }).then(res=>{
+  //     // console.log(res);
+  //     callback(null,{
+  //       movieList:res.movieList
+  //     })
       
-    }).catch(err=>{
-      // callback(err)或者下面这种方式也可以
-      context.error(err)
+  //   }).catch(err=>{
+  //     // callback(err)或者下面这种方式也可以
+  //     context.error(err)
+  //   })
+  // },
+  asyncData(context,callback){
+    axios.get('/in_theaters').then(res=>{
+      console.log(res.data);
+      // 赋值直接调用callback()方法
+      callback(null,{
+        movieList:res.data
+      })
     })
   },
   methods: {
