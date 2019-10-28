@@ -5,9 +5,11 @@ export default()=>{
     return (
         <div>
             {/* <Mynav></Mynav> */}
-            <Mylayout>
+            {/* <Mylayout>
                 <p>student页面</p>
-            </Mylayout>
+            </Mylayout> */}
+            <p>student页面</p>
+
             
         </div>
     )

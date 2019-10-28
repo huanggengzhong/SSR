@@ -34,9 +34,11 @@ const NextRoute = () => {
       </div>
       {/* <Mynav /> */}
 
-      <Mylayout>
+      {/* <Mylayout>
         <p>next路由主页</p>
-      </Mylayout>
+      </Mylayout> */}
+      <p>next路由主页</p>
+
     </div>
   )
 }
