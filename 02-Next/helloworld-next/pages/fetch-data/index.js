@@ -9,7 +9,9 @@ const FetchTest = props => {
     </div>
   )
 }
-FetchTest.getInitialProps = async function() {
+FetchTest.getInitialProps = async function(context) {
+    console.log(context);
+    
   let res = await fetch('http://localhost:3301/in_theaters') //返回的是Promise对象
 
   let data = await res.json() //要转化成json,也转化成同步
