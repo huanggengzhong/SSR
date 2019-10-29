@@ -33,10 +33,10 @@ const Movieheader =()=>(
        
        <ul>
            <li>
-               <Link href="/movie/type?type=in-theaters"><a>正在热映</a></Link>
+               <Link href="/movie/type?type=in_theaters"><a>正在热映</a></Link>
            </li>
            <li>
-               <Link href="/movie/type?type=cooming_soon"><a>即将上映</a></Link>
+               <Link href="/movie/type?type=coming_soon"><a>即将上映</a></Link>
            </li>
            <li>
                <Link href="/movie/type?type=top250"><a>top250</a></Link>
